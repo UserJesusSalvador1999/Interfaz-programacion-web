@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="descripcion" content="Interfaz preliminar del proyecto">
+  <link rel="stylesheet" href="estilo.css" />
+  <title>Interfaz preliminar programación web</title >
+</head>
+<body>
+    <header class="Cabecera">
+    <div class="T-principal">
+      <h1>El mapache gamer</h1>
+      <img src="mapache gamer.jpg" alt="Mapache Gamer" class="Mapacheimg">
+    </div>
+    <nav class="Navegacion">
+      <ul>
+        <li><a href="#lobby">Lobby</a></li>
+        <li><a href="#lanzamientos">Lanzamientos</a></li>
+        <li><a href="#resenas">Reseñas</a></li>
+        <li><a href="#noticias">Noticias</a></li>
+        <li><a href="#gameplays">Gameplays</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#form">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="Contenido">
+    <section id="lobby" class="lob">
+      <h2>Lobby</h2>
+      <p>
+    Bienvenido al lobby del Mapache Gamer. Aquí podrás encontrar la información más
+    reciente sobre videojuegos, reseñas, noticias y lanzamientos. Explora nuestras secciones 
+    y mantente al día con todo lo relacionado con el mundo gamer.
+      </p>
+    </section>
+
+       <section id="lanzamientos" class="lanzamientos-des">
+    <h2>Lanzamientos Destacados</h2>
+        <p>Descubre los próximos estrenos y haz clic para ver más detalles.</p>
+  <div class="carrusel">
+    
+    <a href="#lobezno" class="destacado">
+      <img src="lobezno.jpg" alt="Marvel's Wolverine" />
+      <div class="info-destacado">
+        <h3>Marvel's Wolverine</h3>
+        <span>Ya disponible</span>
+      </div>
+    </a>
+
+    <a href="#gta6" class="destacado">
+      <img src="GTA VI.jpg" alt="GTA VI" />
+      <div class="info-destacado">
+        <h3>GTA VI</h3>
+        <span>Disponible a partir del 19.11.2026</span>
+      </div>
+    </a>
+
+    <a href="#residentevil" class="destacado">
+      <img src="Resident Evil Requiem.jpg" alt="Resident Evil Requiem" />
+      <div class="info-destacado">
+        <h3>Resident Evil Requiem</h3>
+        <span>Ya disponible</span>
+      </div>
+    </a>
+
+    <a href="#ffantasy" class="destacado">
+      <img src="Final Fantasy VII Revelation.jpg" alt="Final Fantasy VII Revelation" />
+      <div class="info-destacado">
+        <h3>Final Fantasy VII Revelation</h3>
+        <span>Disponible a partir del xx.07.2027</span>
+      </div>
+    </a>
+
+    <a href="#fable" class="destacado">
+      <img src="Stranger Than Heaven.jpg" alt="Fable" />
+      <div class="info-destacado">
+        <h3>Fable</h3>
+        <span>Disponible a partir del 23.02.2027</span>
+      </div>
+    </a>
+  </div>
+</section>
+      
+    <section id="resenas" class="res">
+      <h2>Reseñas</h2>
+      <p>En esta sección encontrarás reseñas detalladas de los juegos más populares del momento.</p>
+    </section>
+
+    <section id="noticias" class="not">
+      <h2>Noticias</h2>
+      <p>Mantente al día con las últimas noticias del mundo de los videojuegos.</p>
+    </section>
+
+    <section id="gameplays" class="game">
+      <h2>Gameplays</h2>
+      <p>Mira gameplays de tus juegos favoritos y aprende nuevas estrategias.</p>
+    </section>
+
+    <section id="contacto" class="cont">
+      <h2>Contacto</h2>
+      <p>Ponte en contacto con nosotros para cualquier consulta o sugerencia.</p>
+    </section>
+
+    <form class="formulario-registro" onsubmit="event.preventDefault(); alert('¡Registro completado con éxito!');">
+        
+      <section id="form" class="registro">
+        <div class="grupo-form">
+          <label for="usuario">Nombre de Usuario</label>
+          <input type="text" id="usuario" name="usuario" placeholder="Ej. MapachePro99" required>
+        </div>
+
+        <div class="grupo-form">
+          <label for="correo">Correo Electrónico</label>
+          <input type="email" id="correo" name="correo" placeholder="tu@correo.com" required>
+        </div>
+
+        <div class="grupo-form">
+          <label for="pass">Contraseña</label>
+          <input type="password" id="pass" name="pass" placeholder="Crea una contraseña segura" required>
+        </div>
+
+        <div class="grupo-form">
+          <label for="fechaNacimiento">Fecha de Nacimiento (Mínimo 18 años)</label>
+          <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+        </div>
+        <div>
+        <button type="submit" class="btn-enviar">Unirse al Gremio</button>
+        <button type="reset" class="btn-limpiar">Limpiar Formulario</button>
+        </div>
+      </form>
+
+      <script>
+        const fechaActual = new Date();
+        
+        const añoMaximo = fechaActual.getFullYear() - 18;
+        let mes = fechaActual.getMonth() + 1;
+        let dia = fechaActual.getDate();
+        if (mes < 10) mes = '0' + mes;
+        if (dia < 10) dia = '0' + dia;
+        const fechaLimite = `${añoMaximo}-${mes}-${dia}`;
+        document.getElementById('fechaNacimiento').max = fechaLimite;
+      </script>
+
+  </main>
+</body>
+</html>
