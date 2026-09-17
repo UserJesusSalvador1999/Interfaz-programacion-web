@@ -363,4 +363,38 @@
   box-shadow: 0 5px 15px rgba(3, 120, 58, 0.4);
 }
 
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  overflow-x: hidden; 
+}
+
+@media (max-width: 768px) {
+  
+  .Navegacion ul {
+    flex-wrap: wrap; 
+    gap: 0.5rem; 
+    padding: 0 10px;
+  }
+  
+  .Navegacion a {
+    font-size: 0.9rem; 
+    padding: 0.5rem;
+  }
+
+  .lob h2, section h2 {
+    font-size: 1.4rem !important;      
+    letter-spacing: 1px !important;    
+    width: 95% !important;           
+    margin: 1rem auto !important;
+  }
+
+  p {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
 }
